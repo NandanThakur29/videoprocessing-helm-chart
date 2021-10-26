@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "videoprocessing-helm-test.fullname" . }}-test-connection"
+  labels:
+    {{- include "videoprocessing-helm-test.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "videoprocessing-helm-test.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
