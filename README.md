@@ -7,7 +7,7 @@ This is Helm chart to deploy [videoprocessing](https://github.com/nandanthakur/v
 To install the videoprocessing chart with default options:
 
 ```bash
-helm repo add nandanthakur https://nandanthakur.github.io/videoprocessing-helm-chart
+helm repo add nandanthakur https://github.com/NandanThakur29/videoprocessing-helm-chart
 helm repo update
 helm install videoprocessing nandanthakur/videoprocessing
 ```
